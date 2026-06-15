@@ -5,8 +5,32 @@ extends Node
 @export var _editor_refresh:bool:
 	set(value):
 		_editor_refresh=value
-		refresh()
+		refresh_draw()
+
+@export var _use_at_ready:bool=true
+@export var _deck_number:DeckBuildUtility.CardNumber:
+	set(value):
+		_deck_number=value
+		refresh_draw()
 		
+@export var _deck_type:DeckBuildUtility.CardType:
+	set(value):
+		_deck_type=value
+		refresh_draw()
+		
+@export var _card_title:String="Title"
+@export var _qr_code_url:String="https://github.com/EloiStree"
+
+@export_multiline()
+var _main_text_rich:String
+@export_multiline()
+var _hint_text_rich:String
+
+@export var _last_given_texture:Texture2D
+
+
+
+@export_group("UI")
 @export var _number_labels:Array[Label]
 @export var _icon_labels:Array[Label]
 @export var _card_id_labels:Array[Label]
@@ -14,33 +38,28 @@ extends Node
 @export var _icon_texture:Array[TextureRect]
 @export var _qr_code_url_rect:Array[TextureRect]
 @export var _qr_code_url_labels:Array[Label]
-@export var _qr_code_url:String="https://github.com/EloiStree"
-@export var _card_title:String="Title"
+@export var _main_text_rich_label:RichTextLabel
+@export var _hint_text_rich_label:RichTextLabel
+@export var _display_128x64:TextureRect
 
+@export_group("Setup")
 @export var _spare_texture:Texture2D
 @export var _diamond_texture:Texture2D
 @export var _club_texture:Texture2D
 @export var _heart_texture:Texture2D
-
 @export var _color_red:Color = Color.RED
 @export var _color_black:Color= Color.BLACK
 
 
-
-@export var _use_at_ready:bool=true
-@export var _default_at_ready_number:DeckBuildUtility.CardNumber:
-	set(value):
-		_default_at_ready_number=value
-		refresh()
+func set_hint_text(text:String):
+	_hint_text_rich=text
+	if _hint_text_rich_label:
+		_hint_text_rich_label.text= text
 		
-@export var _default_at_ready_type:DeckBuildUtility.CardType:
-	set(value):
-		_default_at_ready_type=value
-		refresh()
-
-
-func refresh():
-		set_full_with_enum(_default_at_ready_type, _default_at_ready_number)
+func set_main_text(text:String):
+	_main_text_rich=text
+	if _main_text_rich_label:
+		_main_text_rich_label.text= text
 
 func set_qr_code_text(text:String):
 	_qr_code_url =text
@@ -55,13 +74,19 @@ func set_qr_code_text(text:String):
 
 func _ready() -> void:
 	if _use_at_ready:
-		set_full_with_enum(_default_at_ready_type, _default_at_ready_number)
+		set_full_with_enum(_deck_type, _deck_number)
 		set_qr_code_text(_qr_code_url)
 		
 func set_title(text:String):
 	for t in _card_title_labels:
 		if t:
 			t.text=text
+			
+func set_texture_mini_screen(texture:Texture2D):
+	_last_given_texture=texture
+	if texture:
+		_display_128x64.texture=texture
+	
 
 func set_image_with_texture(type:DeckBuildUtility.CardType):
 	for t in _icon_texture:
@@ -118,11 +143,18 @@ func set_card_id(type:DeckBuildUtility.CardType, number:DeckBuildUtility.CardNum
 			t.text= text
 		
 
-func set_full_with_enum( type:DeckBuildUtility.CardType, number:DeckBuildUtility.CardNumber)->void:
-	set_card_id(type, number)
-	set_image_with_texture(type)
+func refresh_draw():
+	set_card_id(_deck_type, _deck_number)
+	set_image_with_texture(_deck_type)
 	set_qr_code_text(_qr_code_url)
 	set_title(_card_title)
+	set_hint_text(_hint_text_rich) 
+	set_main_text(_main_text_rich)
+	set_texture_mini_screen(_last_given_texture)
+
+
+func set_full_with_enum( type:DeckBuildUtility.CardType, number:DeckBuildUtility.CardNumber)->void:
+	
 	match type:
 		DeckBuildUtility.CardType.Heart:
 			set_as_heart()

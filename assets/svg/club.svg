@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="22.489586mm"
+   height="22.489584mm"
+   viewBox="0 0 22.489586 22.489584"
+   version="1.1"
+   id="svg1"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1">
+    <linearGradient
+       id="swatch16">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop16" />
+    </linearGradient>
+    <linearGradient
+       id="swatch15">
+      <stop
+         style="stop-color:#ff0052;stop-opacity:1;"
+         offset="0"
+         id="stop15" />
+    </linearGradient>
+    <linearGradient
+       id="swatch13">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop13" />
+    </linearGradient>
+    <linearGradient
+       id="swatch12">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop12" />
+    </linearGradient>
+    <linearGradient
+       xlink:href="#swatch13"
+       id="linearGradient13"
+       x1="1.2083923"
+       y1="11.821987"
+       x2="22.513739"
+       y2="11.821987"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <g
+     id="layer1"
+     transform="translate(-0.61627189,-0.57719527)"
+     style="display:inline">
+    <path
+       style="display:inline;opacity:1;fill:url(#linearGradient13);stroke:#000000;stroke-width:0.245;stroke-dasharray:none;stroke-opacity:1"
+       d="m 14.25418,10.864304 c 0,0 2.632544,-2.1060339 2.632544,-5.025682 0,-1.7091959 -1.517446,-4.5468064 -5.02566,-4.5468064 -3.5082124,0 -5.0256594,2.8387132 -5.0256594,4.5468064 0,2.9196481 2.6325438,5.025682 2.6325438,5.025682 -2.9240818,-2.2778469 -8.1370561,-0.722713 -8.1370561,3.829653 0,2.278948 1.8621751,4.786232 4.7862331,4.786232 3.5082109,0 5.0256586,-3.829653 5.0256586,-3.829653 0,0 0.445598,4.365026 -2.1536901,6.701623 h 5.7439401 c -2.599288,-2.33547 -2.153713,-6.701623 -2.153713,-6.701623 0,0 1.517471,3.829653 5.025682,3.829653 2.925161,0 4.786235,-2.508385 4.786235,-4.786232 0,-4.552366 -5.213001,-6.1074999 -8.137058,-3.829653 z"
+       id="clubPip" />
+  </g>
+</svg>

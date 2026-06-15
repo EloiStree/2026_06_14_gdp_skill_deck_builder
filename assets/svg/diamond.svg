@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="22.489586mm"
+   height="22.489584mm"
+   viewBox="0 0 22.489586 22.489584"
+   version="1.1"
+   id="svg1"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1">
+    <linearGradient
+       id="swatch16">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop16" />
+    </linearGradient>
+    <linearGradient
+       id="swatch15">
+      <stop
+         style="stop-color:#ff0052;stop-opacity:1;"
+         offset="0"
+         id="stop15" />
+    </linearGradient>
+    <linearGradient
+       id="swatch13">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop13" />
+    </linearGradient>
+    <linearGradient
+       id="swatch12">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop12" />
+    </linearGradient>
+    <linearGradient
+       xlink:href="#swatch15"
+       id="linearGradient14"
+       x1="1.2420619"
+       y1="11.906277"
+       x2="22.64868"
+       y2="11.906277"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       xlink:href="#swatch15"
+       id="linearGradient17"
+       x1="1.2420619"
+       y1="11.906277"
+       x2="22.64868"
+       y2="11.906277"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <g
+     id="layer1"
+     transform="translate(-0.61627189,-0.57719527)"
+     style="display:inline">
+    <path
+       d="M 16.165155,7.3277711 C 13.410796,4.5527518 11.945369,1.7325113 11.945369,1.7325113 c 0,0 -1.465424,2.8202405 -4.2197835,5.5952598 -2.7556544,2.7740419 -6.1887418,4.5785059 -6.1887418,4.5785059 0,0 3.4330874,1.803498 6.1887418,4.57948 2.7543595,2.774049 4.2197835,5.594286 4.2197835,5.594286 0,0 1.465427,-2.820237 4.219786,-5.594286 2.755657,-2.775982 6.188742,-4.57948 6.188742,-4.57948 0,0 -3.433085,-1.804464 -6.188742,-4.5785059 z"
+       id="diamondPip"
+       style="display:inline;fill:url(#linearGradient14);stroke:url(#linearGradient17);stroke-width:0.274241;stroke-miterlimit:4;stroke-dasharray:none" />
+  </g>
+</svg>

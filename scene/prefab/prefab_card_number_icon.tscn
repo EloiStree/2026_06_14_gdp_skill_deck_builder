@@ -1,0 +1,109 @@
+[gd_scene format=3 uid="uid://baxsfn1y0o3su"]
+
+[ext_resource type="FontFile" uid="uid://biwa5e12m3tly" path="res://addons/2026_06_14_gdp_skill_deck_builder/assets/font/Campanile.ttf" id="1_km505"]
+[ext_resource type="FontFile" uid="uid://b717ppqa5p5b0" path="res://addons/2026_06_14_gdp_skill_deck_builder/assets/font/impact/unicode.impact.ttf" id="2_gogog"]
+[ext_resource type="Texture2D" uid="uid://dpbsbhtmicnqt" path="res://addons/2026_06_14_gdp_skill_deck_builder/assets/svg/club.svg" id="3_gogog"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_4t2n8"]
+line_spacing = 0.0
+font = ExtResource("2_gogog")
+font_size = 40
+font_color = Color(1, 0, 0, 1)
+shadow_size = 0
+shadow_offset = Vector2(0, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_km505"]
+font = ExtResource("1_km505")
+font_size = 34
+font_color = Color(1, 0, 0, 1)
+
+[node name="CardNumberIcon" type="Control" unique_id=1777838621]
+layout_mode = 3
+anchor_left = 0.033
+anchor_top = 0.025
+anchor_right = 0.12255451
+anchor_bottom = 0.114718705
+offset_left = 0.18719482
+offset_top = -0.17500114
+offset_right = -0.1828003
+offset_bottom = -0.2230072
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1343871693]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="Control" parent="." unique_id=1583578616]
+layout_mode = 1
+anchor_left = 0.1
+anchor_top = 0.15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LabelCardNumber" type="Label" parent="MarginContainer" unique_id=114731744]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.04845453
+anchor_top = -0.016
+anchor_right = 0.492
+anchor_bottom = 0.94042337
+offset_top = 0.0025209188
+offset_right = -0.0012969971
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_km505")
+theme_override_font_sizes/font_size = 41
+text = "10"
+label_settings = SubResource("LabelSettings_4t2n8")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_trim_flags = 0
+uppercase = true
+
+[node name="LabelIcon" type="Label" parent="MarginContainer" unique_id=1607122951]
+visible = false
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.416
+anchor_right = 0.91352946
+anchor_bottom = 0.8447858
+offset_left = 0.029994965
+offset_top = 0.16602904
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 38
+text = "♠"
+label_settings = SubResource("LabelSettings_km505")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+metadata/_edit_use_anchors_ = true
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="MarginContainer" unique_id=1342808405]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4047433
+anchor_top = 0.06605489
+anchor_right = 0.80775756
+anchor_bottom = 0.7951502
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/AspectRatioContainer" unique_id=1762423115]
+layout_mode = 2
+texture = ExtResource("3_gogog")
+expand_mode = 2
+metadata/_edit_use_anchors_ = true

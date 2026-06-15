@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://3hwckog3xh4g"]
+
+[ext_resource type="PackedScene" uid="uid://be6fvg5c2n5oa" path="res://addons/2026_06_14_gdp_skill_deck_builder/scene/prefab/prefabdeck_card_container.tscn" id="1_7454o"]
+
+[node name="DemoDeckBuilder" type="Node3D" unique_id=542394791]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1042000075]
+
+[node name="DeckCardContainer" parent="CanvasLayer" unique_id=790824408 instance=ExtResource("1_7454o")]

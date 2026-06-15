@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="22.489586mm"
+   height="22.489584mm"
+   viewBox="0 0 22.489586 22.489584"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="club.svg"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   inkscape:export-filename="C:\git\quarantaine\addons\2026_06_14_gdp_skill_deck_builder\assets\svg\diamond.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="5.8083614"
+     inkscape:cx="48.120284"
+     inkscape:cy="21.434617"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="1072"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1">
+    <inkscape:page
+       x="0"
+       y="0"
+       width="22.489586"
+       height="22.489584"
+       id="page2"
+       margin="0"
+       bleed="0" />
+  </sodipodi:namedview>
+  <defs
+     id="defs1">
+    <linearGradient
+       id="swatch16"
+       inkscape:swatch="solid">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop16" />
+    </linearGradient>
+    <linearGradient
+       id="swatch15"
+       inkscape:swatch="solid">
+      <stop
+         style="stop-color:#ff0052;stop-opacity:1;"
+         offset="0"
+         id="stop15" />
+    </linearGradient>
+    <linearGradient
+       id="swatch13"
+       inkscape:swatch="solid">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop13" />
+    </linearGradient>
+    <linearGradient
+       id="swatch12"
+       inkscape:swatch="solid">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop12" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#swatch15"
+       id="linearGradient15"
+       x1="1.0125937"
+       y1="11.941971"
+       x2="22.68318"
+       y2="11.941971"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#swatch15"
+       id="linearGradient16"
+       x1="1.0125937"
+       y1="11.941971"
+       x2="22.68318"
+       y2="11.941971"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-0.61627189,-0.57719527)"
+     sodipodi:insensitive="true"
+     style="display:inline">
+    <path
+       style="display:inline;fill:url(#linearGradient15);fill-opacity:1;stroke:url(#linearGradient16);stroke-width:0.270496;stroke-miterlimit:4;stroke-dasharray:none"
+       id="heartPip"
+       d="m 16.764558,1.3661956 c -4.337531,0 -4.916672,4.015484 -4.916672,4.015484 0,0 -0.579138,-4.015484 -4.916669,-4.015484 -3.036138,0 -5.7833752,1.8004433 -5.7833752,5.1969209 0,4.4878235 8.7996521,9.0008475 10.7000442,15.5907545 1.808324,-6.584385 10.700046,-11.102931 10.700046,-15.5907545 0,-3.3964776 -2.747238,-5.1969209 -5.783374,-5.1969209 z"
+       inkscape:label="heart" />
+  </g>
+</svg>

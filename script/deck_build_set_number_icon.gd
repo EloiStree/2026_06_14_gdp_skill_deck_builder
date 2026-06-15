@@ -25,6 +25,40 @@ extends Node
 var _main_text_rich:String
 @export_multiline()
 var _hint_text_rich:String
+@export_multiline()
+var _bbcode_reminder:String="""
+[b]Bold[/b] [i]Italic[/i] [u]Underline[/u]
+[s]Strikethrough[/s] [color=#ff0000]Red[/color]
+[font_size=24]Large text[/font_size]
+[center]Centered text[/center]
+[right]Right aligned[/right]
+[fill]Justified text[/fill]
+[url]https://godotengine.org[/url]
+[img=64x64]res://icon.svg[/img]
+[img]res://icon.svg[/img]
+[code]print("Hello")[/code]
+[codeblock]
+func _ready():
+    print("Hello")
+[/codeblock]
+
+[table=2]
+	[cell]Name[/cell]
+	[cell]Score[/cell]
+
+	[cell]Alice[/cell]
+	[cell]100[/cell]
+
+	[cell]Bob[/cell]
+	[cell]75[/cell]
+[/table]
+
+[list]
+	[*]Item 1
+	[*]Item 2
+	[*]Item 3
+[/list]
+"""
 
 @export var _last_given_texture:Texture2D
 
@@ -101,46 +135,10 @@ func set_image_with_texture(type:DeckBuildUtility.CardType):
 				t.texture = _club_texture
 
 func set_card_id(type:DeckBuildUtility.CardType, number:DeckBuildUtility.CardNumber):
-	var text:String =""
-	match type:
-		DeckBuildUtility.CardType.Heart:
-			text+="H"
-		DeckBuildUtility.CardType.Spade:
-			text+="S"
-		DeckBuildUtility.CardType.Club:
-			text+="C"
-		DeckBuildUtility.CardType.Diamond:
-			text+="D"
-	match number:
-		DeckBuildUtility.CardNumber.A:
-			text+="A"
-		DeckBuildUtility.CardNumber.V2:
-			text+="2"
-		DeckBuildUtility.CardNumber.V3:
-			text+="3"
-		DeckBuildUtility.CardNumber.V4:
-			text+="4"
-		DeckBuildUtility.CardNumber.V5:
-			text+="5"
-		DeckBuildUtility.CardNumber.V6:
-			text+="6"
-		DeckBuildUtility.CardNumber.V7:
-			text+="7"
-		DeckBuildUtility.CardNumber.V8:
-			text+="8"
-		DeckBuildUtility.CardNumber.V9:
-			text+="9"
-		DeckBuildUtility.CardNumber.V10:
-			text+="10"
-		DeckBuildUtility.CardNumber.J:
-			text+="J"
-		DeckBuildUtility.CardNumber.Q:
-			text+="Q"
-		DeckBuildUtility.CardNumber.K:
-			text+="K"
+	var id:String = DeckBuildUtility.get_id_from(type,number)
 	for t in _card_id_labels:
 		if t:
-			t.text= text
+			t.text= id
 		
 
 func refresh_draw():

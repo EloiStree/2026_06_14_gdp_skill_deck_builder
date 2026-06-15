@@ -40,6 +40,9 @@ func _setup_the_texture_check():
 	
 	
 
+func try_to_set_with_text(text:String):
+	push_error("To ADD")
+	pass
 
 func set_with_text_image_10(text_of_1_and_0:String):
 	push_error("To ADD")

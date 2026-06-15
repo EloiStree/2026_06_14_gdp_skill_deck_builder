@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://3hwckog3xh4g"]
 
+[ext_resource type="Script" uid="uid://hpvwnb5kbbma" path="res://addons/2026_06_14_gdp_skill_deck_builder/script/deck_build_set_card_facade.gd" id="1_4t2n8"]
 [ext_resource type="PackedScene" uid="uid://be6fvg5c2n5oa" path="res://addons/2026_06_14_gdp_skill_deck_builder/scene/prefab/prefabdeck_card_container.tscn" id="1_7454o"]
 [ext_resource type="Script" uid="uid://8crit13xj814" path="res://addons/2026_06_14_gdp_skill_deck_builder/script/deck_build_sub_viewport_to_png.gd" id="2_guicj"]
 [ext_resource type="Texture2D" uid="uid://kit8him7rf4c" path="res://addons/2026_06_14_gdp_skill_deck_builder/assets/svg/diamond.svg" id="3_rc2qu"]
@@ -54,6 +55,7 @@ image = SubResource("Image_k7cxa")
 transform = Transform3D(0.713, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_guicj")
 mesh = SubResource("QuadMesh_2ryi8")
+script = ExtResource("1_4t2n8")
 
 [node name="SubViewport" type="SubViewport" parent="CardGameMesh" unique_id=1251781989]
 transparent_bg = true
@@ -62,12 +64,27 @@ size = Vector2i(720, 1010)
 [node name="DeckCardContainer" parent="CardGameMesh/SubViewport" unique_id=790824408 instance=ExtResource("1_7454o")]
 
 [node name="DeckBuildSetNumberIcon" parent="CardGameMesh/SubViewport/DeckCardContainer/DeckBackground/MarginContainer/Code" parent_id_path=PackedInt32Array(790824408, 1548047174) index="0" unique_id=1236160895]
+_editor_refresh = false
 _deck_number = 0
 _deck_type = 1
 _card_title = "Hello World"
 _qr_code_url = "https://github.com/EloiStree"
-_main_text_rich = "Je code un outil inutile"
-_hint_text_rich = "⚠ Mais on sait jamais."
+_main_text_rich = "[b]Bold[/b] [i]Italic[/i] [u]Underline[/u]
+[s]Strikethrough[/s] [color=#ff0000]Red[/color]
+[font_size=50]Large text[/font_size]
+[center]Centered text[/center]
+[right]Right aligned
+[table=2]
+	[cell]Name[/cell]
+	[cell]Score[/cell]
+	[cell]Alice[/cell]
+	[cell]100[/cell]
+	[cell]Bob[/cell]
+	[cell]75[/cell]
+[/table]
+[/right]
+"
+_hint_text_rich = "⚠ Qui avale une noix de coco, fait confiance en son anus."
 
 [node name="DeckBuildSetTexture128x64" parent="CardGameMesh/SubViewport/DeckCardContainer/DeckBackground/MarginContainer/Code" parent_id_path=PackedInt32Array(790824408, 1548047174) index="1" unique_id=1400369592]
 material_duplicated = SubResource("StandardMaterial3D_k6h06")
@@ -100,10 +117,25 @@ text = "Hello World"
 text = "DA"
 
 [node name="RichTextLabelMainDescription" parent="CardGameMesh/SubViewport/DeckCardContainer/DeckBackground/MarginContainer/TextureRect/CardDeck/RickTextZone" parent_id_path=PackedInt32Array(790824408, 743411931) index="0" unique_id=53526451]
-text = "Je code un outil inutile"
+text = "[b]Bold[/b] [i]Italic[/i] [u]Underline[/u]
+[s]Strikethrough[/s] [color=#ff0000]Red[/color]
+[font_size=50]Large text[/font_size]
+[center]Centered text[/center]
+[right]Right aligned
+[table=2]
+	[cell]Name[/cell]
+	[cell]Score[/cell]
+	[cell]Alice[/cell]
+	[cell]100[/cell]
+	[cell]Bob[/cell]
+	[cell]75[/cell]
+[/table]
+[/right]
+"
 
 [node name="SmallTips" parent="CardGameMesh/SubViewport/DeckCardContainer/DeckBackground/MarginContainer/TextureRect/Control" parent_id_path=PackedInt32Array(790824408, 718586826) index="0" unique_id=35439451]
-text = "⚠ Mais on sait jamais."
+text = "⚠ Qui avale une noix de coco, fait confiance en son anus."
+autowrap_mode = 2
 
 [node name="Node" type="Node" parent="CardGameMesh" unique_id=2006024006]
 
@@ -124,6 +156,11 @@ autostart = true
 [node name="Camera3D" type="Camera3D" parent="." unique_id=462503417]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.5131836)
 
+[connection signal="on_card_type" from="CardGameMesh" to="CardGameMesh" method="set_card_type_from_text"]
+[connection signal="on_display_set_with_text" from="CardGameMesh" to="CardGameMesh/SubViewport/DeckCardContainer/DeckBackground/MarginContainer/Code/DeckBuildSetTexture128x64" method="try_to_set_with_text"]
+[connection signal="on_doc_url" from="CardGameMesh" to="CardGameMesh" method="set_doc_url"]
+[connection signal="on_hint" from="CardGameMesh" to="CardGameMesh" method="set_hint"]
+[connection signal="on_title" from="CardGameMesh" to="CardGameMesh/SubViewport/DeckCardContainer/DeckBackground/MarginContainer/Code/DeckBuildSetNumberIcon" method="set_title"]
 [connection signal="timeout" from="CardGameMesh/Node/DeckBuildSubViewportToPng/Timer" to="CardGameMesh/Node/DeckBuildSubViewportToPng" method="export_png_in_user_image_png"]
 [connection signal="timeout" from="CardGameMesh/Node/DeckBuildSubViewportToPng/Timer2" to="CardGameMesh/SubViewport/DeckCardContainer/DeckBackground/MarginContainer/Code/DeckBuildSetTexture128x64" method="set_to_random"]
 

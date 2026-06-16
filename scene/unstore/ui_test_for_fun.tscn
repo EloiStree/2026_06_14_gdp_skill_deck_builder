@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://dhn0lkijoqkp3"]
+
+[node name="UiTestForFun" type="Control" unique_id=1247950485]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="." unique_id=921448915]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.11400001
+anchor_bottom = 0.069000006
+offset_bottom = 0.31999588
+text = "Test"
+
+[node name="Button2" type="Button" parent="." unique_id=1470543210]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.162
+anchor_top = 0.05
+anchor_right = 0.276
+anchor_bottom = 0.11900001
+offset_bottom = 0.31999588
+text = "Test"
+metadata/_edit_use_anchors_ = true
+
+[node name="Button3" type="Button" parent="." unique_id=879862963]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.354
+anchor_top = 0.025
+anchor_right = 0.468
+anchor_bottom = 0.09400001
+offset_bottom = 0.31999588
+text = "Test"
+metadata/_edit_use_anchors_ = true

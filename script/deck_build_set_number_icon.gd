@@ -39,7 +39,7 @@ var _bbcode_reminder:String="""
 [code]print("Hello")[/code]
 [codeblock]
 func _ready():
-    print("Hello")
+	print("Hello")
 [/codeblock]
 
 [table=2]

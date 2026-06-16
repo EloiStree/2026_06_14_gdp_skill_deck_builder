@@ -3,19 +3,35 @@ extends Node3D
 
 
 signal on_title(text:String)
-signal on_hint(text:String)
 signal on_doc_url(url:String)
 signal on_card_type(card_type:String)
-signal on_display_set_with_text(display_text_image:String)
+signal on_face_texture(texture:Texture2D)
+signal on_back_text_to_display(text:String)
+signal on_back_image_to_display(image:Image)
+signal on_back_scene_to_display(scene:PackedScene)
+signal on_open_url_requested()
 
+func set_back_text_to_display(text:String):
+	on_back_text_to_display.emit(text)
+	
+func set_back_image_to_display(image:Image):
+	on_back_image_to_display.emit(image)
+	
+func set_back_scene_to_display(scene:PackedScene):
+	on_back_scene_to_display.emit(scene)
+	
+func open_current_documentation_url_in_browser():
+	on_open_url_requested.emit()
+	
+	
+	
 
-
+func set_face_texture(texture:Texture2D):
+	on_face_texture.emit(texture)
+	
 func set_title(text:String):
 	on_title.emit(text)
 
-func set_hint(text:String):
-	on_hint.emit(text)
-		
 func set_doc_url(url:String):
 	on_doc_url.emit(url)
 	
@@ -36,14 +52,8 @@ func set_card_type_from_enum(type:DeckBuildUtility.CardType, number:DeckBuildUti
 	var id:String= DeckBuildUtility.get_id_from(type,number)
 	set_card_type_from_text(id)
 	
-func set_display_128x64_with_text(text:String):
-	on_display_set_with_text.emit(text)
 
-func set_display_128x64_with_bool_array(boolean:Array[bool]):
-	var text:String =""
-	for b in boolean:
-		text+= "1" if b else "0"
-	set_display_128x64_with_text(text)
+
 	
 	
 	

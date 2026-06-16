@@ -1,0 +1,163 @@
+[gd_scene format=3 uid="uid://dc7ao8l0vbhtg"]
+
+[ext_resource type="Texture2D" uid="uid://7tg3gc0bilni" path="res://addons/2026_06_14_gdp_skill_deck_builder/assets/image/EloITeaching.png" id="6_ku3ox"]
+[ext_resource type="Script" uid="uid://clxuoyst02rmu" path="res://addons/2026_06_14_gdp_skill_deck_builder/script/deck_build_set_main_canvas.gd" id="7_kvv4i"]
+[ext_resource type="Script" uid="uid://dfvt7rfg6c2rf" path="res://addons/2026_06_14_gdp_skill_deck_builder/script/deck_build_set_main_canvas_test.gd" id="8_wqwmh"]
+[ext_resource type="Texture2D" uid="uid://dc53345fc065u" path="res://addons/2026_06_13_gdp_three_points_xr_cursor/3d/hexa_chess/hexa_chess_board_color_uv.png" id="9_5roi6"]
+[ext_resource type="PackedScene" uid="uid://dhn0lkijoqkp3" path="res://addons/2026_06_14_gdp_skill_deck_builder/scene/unstore/ui_test_for_fun.tscn" id="10_8rbj0"]
+[ext_resource type="Texture2D" uid="uid://blsj4b4x1e8h8" path="res://addons/2026_06_14_gdp_skill_deck_builder/assets/svg/background.svg" id="11_bp742"]
+
+[node name="DeckCardBackContainer" type="AspectRatioContainer" unique_id=220994010]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+ratio = 0.7143
+
+[node name="DeckBackground" type="ColorRect" parent="." unique_id=1318931461]
+layout_mode = 2
+color = Color(0, 0, 0, 0)
+
+[node name="MarginContainer" type="MarginContainer" parent="DeckBackground" unique_id=1969117913]
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -0.18115234
+offset_bottom = -0.032043457
+
+[node name="Code" type="Node" parent="DeckBackground/MarginContainer" unique_id=1395760505]
+
+[node name="DeckBuildSetMainCanvas" type="Node" parent="DeckBackground/MarginContainer/Code" unique_id=1373922622 node_paths=PackedStringArray("_control_scene", "_scene_parent_node", "_control_image", "_texture_rect", "_control_rich_text", "_rich_text")]
+script = ExtResource("7_kvv4i")
+_control_scene = NodePath("../../TextureRect/CardDeck/MainCanvas/ControScene")
+_scene_parent_node = NodePath("../../TextureRect/CardDeck/MainCanvas/ControScene")
+_control_image = NodePath("../../TextureRect/CardDeck/MainCanvas/ControlImage")
+_texture_rect = NodePath("../../TextureRect/CardDeck/MainCanvas/ControlImage/TextureRect")
+_control_rich_text = NodePath("../../TextureRect/CardDeck/MainCanvas/ControlRichText")
+_rich_text = NodePath("../../TextureRect/CardDeck/MainCanvas/ControlRichText/RickTextZone/RichTextLabelMainDescription")
+metadata/_custom_type_script = "uid://clxuoyst02rmu"
+
+[node name="DeckBuildSetMainCanvasTest" type="Node" parent="DeckBackground/MarginContainer/Code/DeckBuildSetMainCanvas" unique_id=123968817 node_paths=PackedStringArray("_to_test")]
+script = ExtResource("8_wqwmh")
+_to_test = NodePath("..")
+_texture = ExtResource("9_5roi6")
+_scene_ui = ExtResource("10_8rbj0")
+metadata/_custom_type_script = "uid://dfvt7rfg6c2rf"
+
+[node name="TextureRect" type="TextureRect" parent="DeckBackground/MarginContainer" unique_id=1342270671]
+texture_filter = 6
+layout_mode = 2
+texture = ExtResource("11_bp742")
+
+[node name="CardDeck" type="TextureRect" parent="DeckBackground/MarginContainer/TextureRect" unique_id=1875495544]
+clip_children = 2
+texture_filter = 6
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+texture = ExtResource("11_bp742")
+expand_mode = 1
+
+[node name="MainCanvas" type="Control" parent="DeckBackground/MarginContainer/TextureRect/CardDeck" unique_id=790550972]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 0.06699753
+offset_bottom = -0.19900131
+metadata/_edit_use_anchors_ = true
+
+[node name="ControlRichText" type="Control" parent="DeckBackground/MarginContainer/TextureRect/CardDeck/MainCanvas" unique_id=969294143]
+layout_mode = 1
+anchor_top = 0.044000003
+anchor_right = 1.0
+anchor_bottom = 0.95600003
+offset_bottom = 0.17926025
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RickTextZone" type="ScrollContainer" parent="DeckBackground/MarginContainer/TextureRect/CardDeck/MainCanvas/ControlRichText" unique_id=477883282]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.01754386
+anchor_top = 0.015923567
+anchor_right = 0.9802632
+anchor_bottom = 1.0254776
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabelMainDescription" type="RichTextLabel" parent="DeckBackground/MarginContainer/TextureRect/CardDeck/MainCanvas/ControlRichText/RickTextZone" unique_id=116343522]
+texture_filter = 1
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 25
+theme_override_font_sizes/bold_font_size = 25
+theme_override_font_sizes/bold_italics_font_size = 25
+theme_override_font_sizes/italics_font_size = 25
+theme_override_font_sizes/mono_font_size = 25
+bbcode_enabled = true
+text = "[font_size=\"40\"]Hello World[/font_size]
+[b]Bold[/b]
+[i]Italic[/i] [u]Underline[/u]
+[s]Strikethrough[/s] [color=#ff0000]Red[/color]
+[font_size=50]Large text[/font_size]
+[center]Centered text[/center]
+[right]Right aligned
+[table=2]
+	[cell]Name[/cell]
+	[cell]Score[/cell]
+	[cell]Alice[/cell]
+	[cell]100[/cell]
+	[cell]Bob[/cell]
+	[cell]75[/cell]
+[/table]
+[/right]
+"
+scroll_active = false
+autowrap_mode = 2
+justification_flags = 35
+metadata/_edit_use_anchors_ = true
+
+[node name="ControlImage" type="Control" parent="DeckBackground/MarginContainer/TextureRect/CardDeck/MainCanvas" unique_id=2079141920]
+visible = false
+layout_mode = 1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="DeckBackground/MarginContainer/TextureRect/CardDeck/MainCanvas/ControlImage" unique_id=965951407]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_ku3ox")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="ControScene" type="Control" parent="DeckBackground/MarginContainer/TextureRect/CardDeck/MainCanvas" unique_id=1201079852]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

@@ -1,0 +1,345 @@
+[gd_scene format=3 uid="uid://be6fvg5c2n5oa"]
+
+[ext_resource type="Script" uid="uid://0h5w8le4wj3y" path="res://addons/2026_06_14_gdp_skill_deck_builder/script/deck_build_set_number_icon.gd" id="1_gxisf"]
+[ext_resource type="Texture2D" uid="uid://dekxlr0ynru3j" path="res://addons/2026_06_14_gdp_skill_deck_builder/assets/svg/spade.svg" id="2_ol0tm"]
+[ext_resource type="Texture2D" uid="uid://kit8him7rf4c" path="res://addons/2026_06_14_gdp_skill_deck_builder/assets/svg/diamond.svg" id="3_xwr6o"]
+[ext_resource type="Texture2D" uid="uid://dpbsbhtmicnqt" path="res://addons/2026_06_14_gdp_skill_deck_builder/assets/svg/club.svg" id="4_is01y"]
+[ext_resource type="Texture2D" uid="uid://bi7u12xykwm74" path="res://addons/2026_06_14_gdp_skill_deck_builder/assets/svg/heart.svg" id="5_t6qot"]
+[ext_resource type="Texture2D" uid="uid://blsj4b4x1e8h8" path="res://addons/2026_06_14_gdp_skill_deck_builder/assets/svg/background.svg" id="6_m1vso"]
+[ext_resource type="PackedScene" uid="uid://baxsfn1y0o3su" path="res://addons/2026_06_14_gdp_skill_deck_builder/scene/prefab/prefab_card_number_icon.tscn" id="7_5vfqa"]
+[ext_resource type="Script" uid="uid://clxuoyst02rmu" path="res://addons/2026_06_14_gdp_skill_deck_builder/script/deck_build_set_main_canvas.gd" id="7_ol0tm"]
+[ext_resource type="FontFile" uid="uid://bnwl8o5ard82b" path="res://addons/2026_06_14_gdp_skill_deck_builder/assets/font/impact/impact.ttf" id="8_kk41p"]
+[ext_resource type="Script" uid="uid://dfvt7rfg6c2rf" path="res://addons/2026_06_14_gdp_skill_deck_builder/script/deck_build_set_main_canvas_test.gd" id="8_xwr6o"]
+[ext_resource type="Texture2D" uid="uid://dc53345fc065u" path="res://addons/2026_06_13_gdp_three_points_xr_cursor/3d/hexa_chess/hexa_chess_board_color_uv.png" id="9_is01y"]
+[ext_resource type="PackedScene" uid="uid://dhn0lkijoqkp3" path="res://addons/2026_06_14_gdp_skill_deck_builder/scene/unstore/ui_test_for_fun.tscn" id="10_t6qot"]
+[ext_resource type="Texture2D" uid="uid://d3h14af08budb" path="res://addons/2026_06_14_gdp_skill_deck_builder/assets/svg/background_cut.svg" id="12_blcyo"]
+[ext_resource type="Texture2D" uid="uid://7tg3gc0bilni" path="res://addons/2026_06_14_gdp_skill_deck_builder/assets/image/EloITeaching.png" id="12_o84hf"]
+
+[sub_resource type="Image" id="Image_o84hf"]
+data = {
+"data": PackedByteArray(255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255),
+"format": "RGBA8",
+"height": 31,
+"mipmaps": false,
+"width": 31
+}
+
+[sub_resource type="ImageTexture" id="ImageTexture_blcyo"]
+image = SubResource("Image_o84hf")
+
+[sub_resource type="LabelSettings" id="LabelSettings_1vxy5"]
+font = ExtResource("8_kk41p")
+font_size = 45
+font_color = Color(0, 0, 0, 1)
+outline_size = 20
+
+[node name="DeckCardContainer" type="AspectRatioContainer" unique_id=790824408]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+ratio = 0.7143
+
+[node name="DeckBackground" type="ColorRect" parent="." unique_id=1875644463]
+layout_mode = 2
+color = Color(0, 0, 0, 0)
+
+[node name="MarginContainer" type="MarginContainer" parent="DeckBackground" unique_id=843081579]
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -0.18115234
+offset_bottom = -0.032043457
+
+[node name="Code" type="Node" parent="DeckBackground/MarginContainer" unique_id=1548047174]
+
+[node name="DeckBuildSetNumberIcon" type="Node" parent="DeckBackground/MarginContainer/Code" unique_id=1236160895 node_paths=PackedStringArray("_number_labels", "_icon_labels", "_card_id_labels", "_card_title_labels", "_icon_texture", "_qr_code_url_rect", "_qr_code_url_labels", "_hint_text_rich_label")]
+script = ExtResource("1_gxisf")
+_editor_refresh = true
+_deck_number = 9
+_card_title = "Title: Hello World"
+_qr_code_url = "https://github.com/EloiStree ddsdfsdf"
+_bbcode_reminder = "[b]Bold[/b] [i]Italic[/i] [u]Underline[/u]
+[s]Strikethrough[/s] [color=#ff0000]Red[/color]
+[font_size=24]Large text[/font_size]
+[center]Centered text[/center]
+[right]Right aligned[/right]
+[fill]Justified text[/fill]
+[url]https://godotengine.org[/url]
+[img=64x64]res://icon.svg[/img]
+[img]res://icon.svg[/img]
+[code]print(\"Hello\")[/code]
+[codeblock]
+func _ready():
+    print(\"Hello\")
+[/codeblock]
+
+[table=2]
+	[cell]Name[/cell]
+	[cell]Score[/cell]
+
+	[cell]Alice[/cell]
+	[cell]100[/cell]
+
+	[cell]Bob[/cell]
+	[cell]75[/cell]
+[/table]
+
+[list]
+	[*]Item 1
+	[*]Item 2
+	[*]Item 3
+[/list]"
+_number_labels = [NodePath("../../TextureRect/CardDeck/CardNumberIconTop/MarginContainer/LabelCardNumber"), NodePath("../../TextureRect/CardDeck/CardNumberIconDown/MarginContainer/LabelCardNumber")]
+_icon_labels = [NodePath("../../TextureRect/CardDeck/CardNumberIconTop/MarginContainer/LabelIcon"), NodePath("../../TextureRect/CardDeck/CardNumberIconDown/MarginContainer/LabelIcon")]
+_card_id_labels = [null]
+_card_title_labels = [NodePath("../../TextureRect/CardDeck/Label")]
+_icon_texture = [null, null]
+_qr_code_url_rect = [NodePath("../../TextureRect/CardDeck/UrlDocQR/AspectRatioContainer/TextureRectCodeQR")]
+_qr_code_url_labels = [null]
+_hint_text_rich_label = NodePath("../../TextureRect/Control/SmallTips")
+_spare_texture = ExtResource("2_ol0tm")
+_diamond_texture = ExtResource("3_xwr6o")
+_club_texture = ExtResource("4_is01y")
+_heart_texture = ExtResource("5_t6qot")
+_color_red = Color(1, 0, 0.32156864, 1)
+metadata/_custom_type_script = "uid://0h5w8le4wj3y"
+
+[node name="DeckBuildSetMainCanvas" type="Node" parent="DeckBackground/MarginContainer/Code" unique_id=994987555 node_paths=PackedStringArray("_control_image", "_texture_rect")]
+script = ExtResource("7_ol0tm")
+_control_image = NodePath("../../TextureRect/CardDeck/MainCanvas/ControlImage")
+_texture_rect = NodePath("../../TextureRect/CardDeck/MainCanvas/ControlImage/TextureRect2/TextureRect")
+metadata/_custom_type_script = "uid://clxuoyst02rmu"
+
+[node name="Node" type="Node" parent="DeckBackground/MarginContainer/Code" unique_id=1951754062 node_paths=PackedStringArray("to_test")]
+script = ExtResource("8_xwr6o")
+to_test = NodePath("../DeckBuildSetMainCanvas")
+text = "Hey ho hey ho"
+texture = ExtResource("9_is01y")
+scene_ui = ExtResource("10_t6qot")
+
+[node name="TextureRect" type="TextureRect" parent="DeckBackground/MarginContainer" unique_id=1832059212]
+texture_filter = 6
+layout_mode = 2
+texture = ExtResource("6_m1vso")
+
+[node name="CardDeck" type="TextureRect" parent="DeckBackground/MarginContainer/TextureRect" unique_id=37501668]
+texture_filter = 6
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.040000003
+anchor_top = 0.029000001
+anchor_right = 0.96000004
+anchor_bottom = 0.9710001
+offset_left = 0.03999901
+offset_top = -0.2709999
+offset_right = -0.040008545
+offset_bottom = 0.27093506
+texture = ExtResource("12_blcyo")
+expand_mode = 1
+
+[node name="MainCanvas" type="Control" parent="DeckBackground/MarginContainer/TextureRect/CardDeck" unique_id=186332786]
+layout_mode = 1
+anchor_left = 0.0043573007
+anchor_top = 0.00302432
+anchor_right = 0.9976754
+anchor_bottom = 1.0002913
+metadata/_edit_use_anchors_ = true
+
+[node name="ControlImage" type="Control" parent="DeckBackground/MarginContainer/TextureRect/CardDeck/MainCanvas" unique_id=891975302]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect2" type="TextureRect" parent="DeckBackground/MarginContainer/TextureRect/CardDeck/MainCanvas/ControlImage" unique_id=1903870081]
+clip_children = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("12_blcyo")
+
+[node name="TextureRect" type="TextureRect" parent="DeckBackground/MarginContainer/TextureRect/CardDeck/MainCanvas/ControlImage/TextureRect2" unique_id=228973570]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -100.63298
+offset_right = 100.632965
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("12_o84hf")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="ColorRect" type="ColorRect" parent="DeckBackground/MarginContainer/TextureRect/CardDeck/MainCanvas/ControlImage/TextureRect2" unique_id=561346929]
+visible = false
+layout_mode = 0
+offset_right = 464.0
+offset_bottom = 67.999985
+color = Color(1, 1, 1, 0.638)
+
+[node name="CardNumberIconTop" parent="DeckBackground/MarginContainer/TextureRect/CardDeck" unique_id=1777838621 instance=ExtResource("7_5vfqa")]
+layout_mode = 1
+anchor_left = 0.0
+anchor_top = 0.0012352251
+anchor_right = 0.22044183
+anchor_bottom = 0.09289229
+offset_left = 0.19919682
+offset_top = 0.17900002
+
+[node name="ColorRect" parent="DeckBackground/MarginContainer/TextureRect/CardDeck/CardNumberIconTop" index="0" unique_id=1343871693]
+color = Color(0, 0, 0, 0)
+
+[node name="LabelIcon" parent="DeckBackground/MarginContainer/TextureRect/CardDeck/CardNumberIconTop/MarginContainer" parent_id_path=PackedInt32Array(1777838621, 1583578616) index="1" unique_id=1607122951]
+text = "♥"
+
+[node name="CardNumberIconDown" parent="DeckBackground/MarginContainer/TextureRect/CardDeck" unique_id=1898379130 instance=ExtResource("7_5vfqa")]
+layout_mode = 1
+anchor_left = 0.78400004
+anchor_top = 0.90900004
+anchor_right = 1.0
+anchor_bottom = 1.0
+rotation = 3.1415927
+pivot_offset_ratio = Vector2(0.5, 0.5)
+
+[node name="LabelIcon" parent="DeckBackground/MarginContainer/TextureRect/CardDeck/CardNumberIconDown/MarginContainer" parent_id_path=PackedInt32Array(1898379130, 1583578616) index="1" unique_id=1607122951]
+text = "♥"
+
+[node name="ReferenceRect" type="ReferenceRect" parent="DeckBackground/MarginContainer/TextureRect/CardDeck/CardNumberIconDown" unique_id=395824883]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="UrlDocQR" type="Control" parent="DeckBackground/MarginContainer/TextureRect/CardDeck" unique_id=1616066489]
+layout_mode = 1
+anchor_top = 0.7863141
+anchor_right = 0.30953565
+anchor_bottom = 1.0001624
+offset_top = -0.18798828
+offset_right = -0.19081116
+offset_bottom = -0.11400223
+metadata/_edit_use_anchors_ = true
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="DeckBackground/MarginContainer/TextureRect/CardDeck/UrlDocQR" unique_id=751068473]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.014597236
+anchor_right = 1.0004016
+anchor_bottom = 1.0141844
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="QRWhiteColor" type="ColorRect" parent="DeckBackground/MarginContainer/TextureRect/CardDeck/UrlDocQR/AspectRatioContainer" unique_id=1505948659]
+layout_mode = 2
+
+[node name="TextureRectCodeQR" type="TextureRect" parent="DeckBackground/MarginContainer/TextureRect/CardDeck/UrlDocQR/AspectRatioContainer" unique_id=517949342]
+texture_filter = 1
+layout_mode = 2
+texture = SubResource("ImageTexture_blcyo")
+expand_mode = 2
+flip_v = true
+
+[node name="Label" type="Label" parent="DeckBackground/MarginContainer/TextureRect/CardDeck" unique_id=1291718429]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.9943377
+anchor_top = 0.901041
+anchor_right = 0.9943377
+anchor_bottom = 0.901041
+offset_left = -102.380005
+offset_top = -3.4830322
+offset_right = 453.75
+offset_bottom = 98.00989
+rotation = -1.5707964
+text = "Eloi Teaching"
+label_settings = SubResource("LabelSettings_1vxy5")
+vertical_alignment = 2
+
+[node name="ColorRect" type="ColorRect" parent="DeckBackground/MarginContainer/TextureRect/CardDeck/Label" unique_id=439573243]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.95
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0, 0, 0, 1)
+
+[node name="Control" type="ScrollContainer" parent="DeckBackground/MarginContainer/TextureRect" unique_id=718586826]
+clip_children = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.068
+anchor_top = 0.88400006
+anchor_right = 0.75500005
+anchor_bottom = 0.96500003
+offset_left = 0.107997894
+offset_top = -0.19812012
+offset_right = 0.15496826
+offset_bottom = 0.23492432
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 3
+
+[node name="SmallTips" type="RichTextLabel" parent="DeckBackground/MarginContainer/TextureRect/Control" unique_id=35439451]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 25
+theme_override_font_sizes/bold_font_size = 25
+theme_override_font_sizes/bold_italics_font_size = 25
+theme_override_font_sizes/italics_font_size = 25
+theme_override_font_sizes/mono_font_size = 25
+bbcode_enabled = true
+fit_content = true
+autowrap_mode = 1
+autowrap_trim_flags = 0
+shortcut_keys_enabled = false
+vertical_alignment = 2
+justification_flags = 235
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="DeckBackground" unique_id=1362119592]
+visible = false
+self_modulate = Color(1, 0, 0, 1)
+clip_children = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_is01y")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="ColorRect" type="ColorRect" parent="DeckBackground/TextureRect" unique_id=1763814200]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0, 0, 1)
+
+[editable path="DeckBackground/MarginContainer/TextureRect/CardDeck/CardNumberIconTop"]
+[editable path="DeckBackground/MarginContainer/TextureRect/CardDeck/CardNumberIconDown"]

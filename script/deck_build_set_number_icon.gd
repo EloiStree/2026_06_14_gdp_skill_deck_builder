@@ -65,16 +65,14 @@ func _ready():
 
 
 @export_group("UI")
+@export var _card_title_labels:Array[Label]
+@export var _front_face_texture:TextureRect
 @export var _number_labels:Array[Label]
 @export var _icon_labels:Array[Label]
-@export var _card_id_labels:Array[Label]
-@export var _card_title_labels:Array[Label]
 @export var _icon_texture:Array[TextureRect]
 @export var _qr_code_url_rect:Array[TextureRect]
 @export var _qr_code_url_labels:Array[Label]
-@export var _main_text_rich_label:RichTextLabel
-@export var _hint_text_rich_label:RichTextLabel
-@export var _display_128x64:TextureRect
+
 
 @export_group("Setup")
 @export var _spare_texture:Texture2D
@@ -85,15 +83,16 @@ func _ready():
 @export var _color_black:Color= Color.BLACK
 
 
-func set_hint_text(text:String):
-	_hint_text_rich=text
-	if _hint_text_rich_label:
-		_hint_text_rich_label.text= text
+func _ready() -> void:
+	if _use_at_ready:
+		set_full_with_enum(_deck_type, _deck_number)
+		set_qr_code_text(_qr_code_url)
 		
-func set_main_text(text:String):
-	_main_text_rich=text
-	if _main_text_rich_label:
-		_main_text_rich_label.text= text
+		
+func set_front_face_texture(image:Texture2D):
+	_last_given_texture=image
+	_front_face_texture.texture=image
+	
 
 func set_qr_code_text(text:String):
 	_qr_code_url =text
@@ -106,20 +105,13 @@ func set_qr_code_text(text:String):
 		if t:
 			t.text= text
 
-func _ready() -> void:
-	if _use_at_ready:
-		set_full_with_enum(_deck_type, _deck_number)
-		set_qr_code_text(_qr_code_url)
-		
+
 func set_title(text:String):
 	for t in _card_title_labels:
 		if t:
 			t.text=text
 			
-func set_texture_mini_screen(texture:Texture2D):
-	_last_given_texture=texture
-	if texture:
-		_display_128x64.texture=texture
+
 	
 
 func set_image_with_texture(type:DeckBuildUtility.CardType):
@@ -134,22 +126,68 @@ func set_image_with_texture(type:DeckBuildUtility.CardType):
 			elif type==DeckBuildUtility.CardType.Club:
 				t.texture = _club_texture
 
-func set_card_id(type:DeckBuildUtility.CardType, number:DeckBuildUtility.CardNumber):
-	var id:String = DeckBuildUtility.get_id_from(type,number)
-	for t in _card_id_labels:
-		if t:
-			t.text= id
+
 		
 
 func refresh_draw():
-	set_card_id(_deck_type, _deck_number)
 	set_image_with_texture(_deck_type)
 	set_qr_code_text(_qr_code_url)
 	set_title(_card_title)
-	set_hint_text(_hint_text_rich) 
-	set_main_text(_main_text_rich)
-	set_texture_mini_screen(_last_given_texture)
+	set_full_with_enum(_deck_type,_deck_number)
 
+func open_url_in_browser_from_inspector():
+	OS.shell_open(_qr_code_url)
+
+func set_card_type_from_text(text:String):
+	text =text.to_upper()
+	
+	var type:DeckBuildUtility.CardType
+	var number:DeckBuildUtility.CardNumber
+	if text.length()<2:
+		return
+		
+	if text[0]=="H":
+		type== DeckBuildUtility.CardType.Heart
+	elif text[0]=="D":
+		type== DeckBuildUtility.CardType.Diamond
+	elif text[0]=="C":
+		type== DeckBuildUtility.CardType.Club
+	elif text[0]=="S":
+		type== DeckBuildUtility.CardType.Spade
+	
+	if text.length()==3:
+		number=DeckBuildUtility.CardNumber.V10
+
+	if text.length()==2:
+		var c_type:String = text[1]
+		match  c_type:
+			"A":
+				number=DeckBuildUtility.CardNumber.A
+			"1":
+				number=DeckBuildUtility.CardNumber.A
+			"J":
+				number=DeckBuildUtility.CardNumber.J
+			"Q":
+				number=DeckBuildUtility.CardNumber.Q
+			"K":
+				number=DeckBuildUtility.CardNumber.K
+			"2":
+				number=DeckBuildUtility.CardNumber.V2
+			"3":
+				number=DeckBuildUtility.CardNumber.V3
+			"4":
+				number=DeckBuildUtility.CardNumber.V4
+			"5":
+				number=DeckBuildUtility.CardNumber.V5
+			"6":
+				number=DeckBuildUtility.CardNumber.V6
+			"7":
+				number=DeckBuildUtility.CardNumber.V7
+			"8":
+				number=DeckBuildUtility.CardNumber.V8
+			"9":
+				number=DeckBuildUtility.CardNumber.V9
+	set_full_with_enum(type,number)
 
 func set_full_with_enum( type:DeckBuildUtility.CardType, number:DeckBuildUtility.CardNumber)->void:
 	

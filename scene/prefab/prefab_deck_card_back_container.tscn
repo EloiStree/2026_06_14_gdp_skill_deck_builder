@@ -2,9 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://7tg3gc0bilni" path="res://addons/2026_06_14_gdp_skill_deck_builder/assets/image/EloITeaching.png" id="6_ku3ox"]
 [ext_resource type="Script" uid="uid://clxuoyst02rmu" path="res://addons/2026_06_14_gdp_skill_deck_builder/script/deck_build_set_main_canvas.gd" id="7_kvv4i"]
-[ext_resource type="Script" uid="uid://dfvt7rfg6c2rf" path="res://addons/2026_06_14_gdp_skill_deck_builder/script/deck_build_set_main_canvas_test.gd" id="8_wqwmh"]
-[ext_resource type="Texture2D" uid="uid://dc53345fc065u" path="res://addons/2026_06_13_gdp_three_points_xr_cursor/3d/hexa_chess/hexa_chess_board_color_uv.png" id="9_5roi6"]
-[ext_resource type="PackedScene" uid="uid://dhn0lkijoqkp3" path="res://addons/2026_06_14_gdp_skill_deck_builder/scene/unstore/ui_test_for_fun.tscn" id="10_8rbj0"]
 [ext_resource type="Texture2D" uid="uid://blsj4b4x1e8h8" path="res://addons/2026_06_14_gdp_skill_deck_builder/assets/svg/background.svg" id="11_bp742"]
 
 [node name="DeckCardBackContainer" type="AspectRatioContainer" unique_id=220994010]
@@ -42,13 +39,6 @@ _control_rich_text = NodePath("../../TextureRect/CardDeck/MainCanvas/ControlRich
 _rich_text = NodePath("../../TextureRect/CardDeck/MainCanvas/ControlRichText/RickTextZone/RichTextLabelMainDescription")
 metadata/_custom_type_script = "uid://clxuoyst02rmu"
 
-[node name="DeckBuildSetMainCanvasTest" type="Node" parent="DeckBackground/MarginContainer/Code/DeckBuildSetMainCanvas" unique_id=123968817 node_paths=PackedStringArray("_to_test")]
-script = ExtResource("8_wqwmh")
-_to_test = NodePath("..")
-_texture = ExtResource("9_5roi6")
-_scene_ui = ExtResource("10_8rbj0")
-metadata/_custom_type_script = "uid://dfvt7rfg6c2rf"
-
 [node name="TextureRect" type="TextureRect" parent="DeckBackground/MarginContainer" unique_id=1342270671]
 texture_filter = 6
 layout_mode = 2
@@ -75,7 +65,29 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_right = 0.06699753
 offset_bottom = -0.19900131
+grow_horizontal = 2
+grow_vertical = 2
 metadata/_edit_use_anchors_ = true
+
+[node name="ControlImage" type="Control" parent="DeckBackground/MarginContainer/TextureRect/CardDeck/MainCanvas" unique_id=2079141920]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="DeckBackground/MarginContainer/TextureRect/CardDeck/MainCanvas/ControlImage" unique_id=965951407]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_ku3ox")
+expand_mode = 3
+stretch_mode = 5
 
 [node name="ControlRichText" type="Control" parent="DeckBackground/MarginContainer/TextureRect/CardDeck/MainCanvas" unique_id=969294143]
 layout_mode = 1
@@ -133,25 +145,6 @@ scroll_active = false
 autowrap_mode = 2
 justification_flags = 35
 metadata/_edit_use_anchors_ = true
-
-[node name="ControlImage" type="Control" parent="DeckBackground/MarginContainer/TextureRect/CardDeck/MainCanvas" unique_id=2079141920]
-visible = false
-layout_mode = 1
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="TextureRect" type="TextureRect" parent="DeckBackground/MarginContainer/TextureRect/CardDeck/MainCanvas/ControlImage" unique_id=965951407]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("6_ku3ox")
-expand_mode = 3
-stretch_mode = 5
 
 [node name="ControScene" type="Control" parent="DeckBackground/MarginContainer/TextureRect/CardDeck/MainCanvas" unique_id=1201079852]
 visible = false

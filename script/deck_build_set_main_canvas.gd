@@ -24,13 +24,11 @@ func disable_all():
 
 
 func set_with_rich_text(text:String):
-	disable_all()
-	_control_rich_text.visible=true
+	_control_rich_text.visible= text or text.length()>0
 	_rich_text.text= text
 
 func set_with_texture(image:Texture2D):
-	disable_all()
-	_control_image.visible=true
+	_control_image.visible= image!=null
 	_texture_rect.texture= image
 	set_control_as_full(_texture_rect)
 	
@@ -48,11 +46,11 @@ func set_control_as_full(target:Node):
 		c.offset_bottom = 0
 	
 func set_with_scene_ui2d(scene:PackedScene):
-	disable_all()
-	_control_scene.visible=true
+	_control_scene.visible=scene!=null
 	if _scene_created:
 		_scene_created.queue_free()
-		
+	if scene==null:
+		return 
 	var created:Node = scene.instantiate()
 	_scene_created=created
 	_scene_parent_node.add_child(created)

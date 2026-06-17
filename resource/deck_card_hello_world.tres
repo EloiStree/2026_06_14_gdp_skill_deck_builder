@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="DeckBuildDefaultCardResource" format=3 uid="uid://d3apy2mhn0xl6"]
+
+[ext_resource type="Texture2D" uid="uid://7tg3gc0bilni" path="res://addons/2026_06_14_gdp_skill_deck_builder/assets/image/EloITeaching.png" id="1_c38kp"]
+[ext_resource type="Script" uid="uid://b8moyebft7xoa" path="res://addons/2026_06_14_gdp_skill_deck_builder/script/deck_build_default_card_resource.gd" id="1_d3lry"]
+
+[resource]
+script = ExtResource("1_d3lry")
+_face_title = "Hello World"
+_face_documentation_url = "https://github.com/EloiStree"
+_face_image = ExtResource("1_c38kp")
+_back_rich_text = "Fuck the Rules ! VR & AR, Unity 3D, New-tech, R&D. We want to know if it is possible. Grab some ☕ and 🍺 and let's try to code it."
+metadata/_custom_type_script = "uid://b8moyebft7xoa"

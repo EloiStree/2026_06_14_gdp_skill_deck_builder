@@ -8,23 +8,12 @@ extends Node
 		refresh_draw()
 
 @export var _use_at_ready:bool=true
-@export var _deck_number:DeckBuildUtility.CardNumber:
-	set(value):
-		_deck_number=value
-		refresh_draw()
-		
-@export var _deck_type:DeckBuildUtility.CardType:
-	set(value):
-		_deck_type=value
-		refresh_draw()
+@export var _deck_number:DeckBuildUtility.CardNumber
+@export var _deck_type:DeckBuildUtility.CardType
 		
 @export var _card_title:String="Title"
 @export var _qr_code_url:String="https://github.com/EloiStree"
 
-@export_multiline()
-var _main_text_rich:String
-@export_multiline()
-var _hint_text_rich:String
 @export_multiline()
 var _bbcode_reminder:String="""
 [b]Bold[/b] [i]Italic[/i] [u]Underline[/u]
@@ -68,6 +57,7 @@ func _ready():
 @export var _card_title_labels:Array[Label]
 @export var _front_face_texture:TextureRect
 @export var _number_labels:Array[Label]
+@export var _number_texture:Array[TextureRect]
 @export var _icon_labels:Array[Label]
 @export var _icon_texture:Array[TextureRect]
 @export var _qr_code_url_rect:Array[TextureRect]
@@ -82,11 +72,40 @@ func _ready():
 @export var _color_red:Color = Color.RED
 @export var _color_black:Color= Color.BLACK
 
+@export_group("Setup QJKA")
+@export var _card_r0a:Texture2D
+@export var _card_r02:Texture2D
+@export var _card_r03:Texture2D
+@export var _card_r04:Texture2D
+@export var _card_r05:Texture2D
+@export var _card_r06:Texture2D
+@export var _card_r07:Texture2D
+@export var _card_r08:Texture2D
+@export var _card_r09:Texture2D
+@export var _card_r10:Texture2D
+@export var _card_rj:Texture2D
+@export var _card_rq:Texture2D
+@export var _card_rk:Texture2D
+@export var _card_b0a:Texture2D
+@export var _card_b02:Texture2D
+@export var _card_b03:Texture2D
+@export var _card_b04:Texture2D
+@export var _card_b05:Texture2D
+@export var _card_b06:Texture2D
+@export var _card_b07:Texture2D
+@export var _card_b08:Texture2D
+@export var _card_b09:Texture2D
+@export var _card_b10:Texture2D
+@export var _card_bj:Texture2D
+@export var _card_bq:Texture2D
+@export var _card_bk:Texture2D
+
+
 
 func _ready() -> void:
 	if _use_at_ready:
 		set_full_with_enum(_deck_type, _deck_number)
-		set_qr_code_text(_qr_code_url)
+		set_qr_code_url(_qr_code_url)
 		
 		
 func set_front_face_texture(image:Texture2D):
@@ -94,16 +113,17 @@ func set_front_face_texture(image:Texture2D):
 	_front_face_texture.texture=image
 	
 
-func set_qr_code_text(text:String):
-	_qr_code_url =text
+
+func set_qr_code_url(url:String):
+	_qr_code_url =url
 	var builder = DeckBuildQrCode.new()
-	var image :=builder.get_texture(text)
+	var image :=builder.get_texture(url)
 	for t in _qr_code_url_rect:
 		if t:
 			t.texture= image
 	for t in _qr_code_url_labels:
 		if t:
-			t.text= text
+			t.text= url
 
 
 func set_title(text:String):
@@ -131,7 +151,7 @@ func set_image_with_texture(type:DeckBuildUtility.CardType):
 
 func refresh_draw():
 	set_image_with_texture(_deck_type)
-	set_qr_code_text(_qr_code_url)
+	set_qr_code_url(_qr_code_url)
 	set_title(_card_title)
 	set_full_with_enum(_deck_type,_deck_number)
 
@@ -145,15 +165,16 @@ func set_card_type_from_text(text:String):
 	var number:DeckBuildUtility.CardNumber
 	if text.length()<2:
 		return
-		
+	
+	
 	if text[0]=="H":
-		type== DeckBuildUtility.CardType.Heart
+		type= DeckBuildUtility.CardType.Heart
 	elif text[0]=="D":
-		type== DeckBuildUtility.CardType.Diamond
+		type= DeckBuildUtility.CardType.Diamond
 	elif text[0]=="C":
-		type== DeckBuildUtility.CardType.Club
+		type= DeckBuildUtility.CardType.Club
 	elif text[0]=="S":
-		type== DeckBuildUtility.CardType.Spade
+		type= DeckBuildUtility.CardType.Spade
 	
 	if text.length()==3:
 		number=DeckBuildUtility.CardNumber.V10
@@ -189,8 +210,13 @@ func set_card_type_from_text(text:String):
 				number=DeckBuildUtility.CardNumber.V9
 	set_full_with_enum(type,number)
 
+
+func is_red():
+	return _deck_type==DeckBuildUtility.CardType.Heart or _deck_type==DeckBuildUtility.CardType.Diamond
+func is_black():
+	return _deck_type==DeckBuildUtility.CardType.Club or _deck_type==DeckBuildUtility.CardType.Spade
+
 func set_full_with_enum( type:DeckBuildUtility.CardType, number:DeckBuildUtility.CardNumber)->void:
-	
 	match type:
 		DeckBuildUtility.CardType.Heart:
 			set_as_heart()
@@ -228,7 +254,14 @@ func set_full_with_enum( type:DeckBuildUtility.CardType, number:DeckBuildUtility
 			set_id_q()
 		DeckBuildUtility.CardNumber.K:
 			set_id_k()
-		
+	set_image_with_texture(type)
+	
+
+func set_number_with_texture(image :Texture2D):
+	for t in _number_texture:	
+		if t:
+			t.texture = image
+	
 
 func set_number(text:String):
 	for t in _number_labels:	
@@ -257,48 +290,68 @@ func set_color(color:Color):
 func set_as_heart():
 	set_icon("♥")
 	set_color_red()
+	_deck_type=DeckBuildUtility.CardType.Heart
+	
 
 func set_as_diamond():
+	_deck_type=DeckBuildUtility.CardType.Diamond
 	set_icon("♦")
 	set_color_red()
 	
 func set_as_spade():
+	_deck_type=DeckBuildUtility.CardType.Spade
 	set_icon("♠")
 	set_color_black()
 	
 func set_as_club():
+	_deck_type=DeckBuildUtility.CardType.Club
 	set_icon("♣")
 	set_color_black()
 	
 
 func set_id_1():
 	set_number("1")
+	set_number_with_texture(_card_r0a if is_red() else _card_b0a)
+		
 func set_id_2():
 	set_number("2")
+	set_number_with_texture(_card_r02 if is_red() else _card_b02)
 func set_id_3():
 	set_number("3")
+	set_number_with_texture(_card_r03 if is_red() else _card_b03)
 func set_id_4():
 	set_number("4")
+	set_number_with_texture(_card_r04 if is_red() else _card_b04)
 func set_id_5():
 	set_number("5")
+	set_number_with_texture(_card_r05 if is_red() else _card_b05)
 func set_id_6():
 	set_number("6")
+	set_number_with_texture(_card_r06 if is_red() else _card_b06)
 func set_id_7():
 	set_number("7")
+	set_number_with_texture(_card_r07 if is_red() else _card_b07)
 func set_id_8():
 	set_number("8")
+	set_number_with_texture(_card_r08 if is_red() else _card_b08)
 func set_id_9():
 	set_number("9")		
+	set_number_with_texture(_card_r09 if is_red() else _card_b09)
 func set_id_10():
-	set_number("10")		
+	set_number("10")	
+	set_number_with_texture(_card_r10 if is_red() else _card_b10)	
 func set_id_a():
 	set_number("a")		
+	set_number_with_texture(_card_r0a if is_red() else _card_b0a)
 func set_id_k():
 	set_number("k")		
+	set_number_with_texture(_card_rk if is_red() else _card_bk)
 func set_id_q():
 	set_number("q")		
+	set_number_with_texture(_card_rq if is_red() else _card_bq)
 func set_id_j():
 	set_number("j")		
+	set_number_with_texture(_card_rj if is_red() else _card_bj)
 
 func set_from_icon_index(index:int):
 	match index:
